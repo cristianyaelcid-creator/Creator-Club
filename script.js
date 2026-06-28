@@ -5,7 +5,11 @@ fetch(API_URL)
   .then(datos => {
 
     // Tomamos el primer cliente (Jesús)
-    const cliente = datos[1];
+    const parametros = new URLSearchParams(window.location.search);
+
+const id = parseInt(parametros.get("id")) || 1;
+
+const cliente = datos.find(fila => fila[0] == id);
 
     document.getElementById("nombre").textContent = cliente[1];
 
