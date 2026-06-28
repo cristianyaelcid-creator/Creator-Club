@@ -36,6 +36,27 @@ if(cliente[3] >= 10){
 
 document.getElementById("nivel").textContent =
 "Nivel: " + nivel;
+  const tarjeta = document.querySelector(".card");
+
+tarjeta.classList.remove("bronce","plata","oro","diamante");
+
+if(cliente[3] >= 10){
+
+    tarjeta.classList.add("diamante");
+
+}else if(cliente[3] >= 8){
+
+    tarjeta.classList.add("oro");
+
+}else if(cliente[3] >= 5){
+
+    tarjeta.classList.add("plata");
+
+}else{
+
+    tarjeta.classList.add("bronce");
+
+}  
     
 if (cliente[3] >= 10) {
 
