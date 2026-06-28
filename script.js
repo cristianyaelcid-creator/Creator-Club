@@ -8,7 +8,7 @@ fetch(API_URL)
    const parametros = new URLSearchParams(window.location.search);
 
 const id = parseInt(parametros.get("id")) || 1;
-alert("ID recibido: " + id);
+
 // Quitamos la primera fila (encabezados)
 const clientes = datos.slice(1);
 
