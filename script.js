@@ -24,7 +24,19 @@ const cliente = clientes.find(fila => Number(fila[0]) === id);
       cliente[3] + " de 10 compras";
 
     const faltan = 10 - cliente[3];
+let nivel = "🥉 Bronce";
 
+if(cliente[3] >= 10){
+    nivel = "💎 Diamante";
+}else if(cliente[3] >= 8){
+    nivel = "🥇 Oro";
+}else if(cliente[3] >= 5){
+    nivel = "🥈 Plata";
+}
+
+document.getElementById("nivel").textContent =
+"Nivel: " + nivel;
+    
     document.getElementById("recompensa").textContent =
       "🎁 Te faltan " + faltan + " compras";
 
