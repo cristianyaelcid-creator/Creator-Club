@@ -87,3 +87,26 @@ color:#8a5a00;
 font-weight:bold;
 font-size:15px;
 }
+.bronce{
+background:#fff3e0;
+}
+
+.plata{
+background:#eceff1;
+}
+
+.oro{
+background:#fff8e1;
+}
+
+.diamante{
+background:linear-gradient(135deg,#2196f3,#673ab7);
+color:white;
+}
+
+.diamante h1,
+.diamante .name,
+.diamante .points,
+.diamante .footer{
+color:white;
+}
