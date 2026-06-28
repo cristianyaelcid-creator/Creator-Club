@@ -16,7 +16,9 @@ const clientes = datos.slice(1);
 const cliente = clientes.find(fila => Number(fila[0]) === id);
 
     document.getElementById("nombre").textContent = cliente[1];
-
+document.getElementById("memberId").textContent =
+"Miembro #" + String(cliente[0]).padStart(4,"0");
+    
     document.getElementById("puntos").textContent =
       cliente[2] + " punto(s)";
 
