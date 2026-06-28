@@ -37,9 +37,18 @@ if(cliente[3] >= 10){
 document.getElementById("nivel").textContent =
 "Nivel: " + nivel;
     
-    document.getElementById("recompensa").textContent =
-      "🎁 Te faltan " + faltan + " compras";
+if (cliente[3] >= 10) {
 
+    document.getElementById("recompensa").innerHTML =
+    "🎉 <b>¡Recompensa desbloqueada!</b><br>Ya puedes reclamar tu beneficio.";
+
+} else {
+
+    document.getElementById("recompensa").textContent =
+    "🎁 Te faltan " + faltan + " compras";
+
+}
+    
     document.getElementById("barra").style.width =
       (cliente[3] * 10) + "%";
 
