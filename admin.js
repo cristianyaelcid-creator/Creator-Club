@@ -24,11 +24,7 @@ fetch(API_URL)
             </div>
 
             <div class="botones">
-                <button disabled>➖</button>
-
-                <span>${cliente[3]}</span>
-
-                <button disabled>➕</button>
+               <button onclick="probarPost()">➕</button>
             </div>
 
         </div>
@@ -38,3 +34,12 @@ fetch(API_URL)
     document.getElementById("clientes").innerHTML = html;
 
 });
+function probarPost(){
+
+fetch(API_URL,{
+method:"POST"
+})
+.then(r=>r.text())
+.then(res=>alert(res));
+
+}
