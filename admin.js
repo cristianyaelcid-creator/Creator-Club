@@ -1,27 +1,40 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbxnNeaSjbg9xEj07OZbhwvWPOJYu38cCJFhdpKm_OdTaeVSSnTicp-qRCAScBXE3_zhXw/exec";
 
 fetch(API_URL)
-.then(r=>r.json())
-.then(datos=>{
+.then(r => r.json())
+.then(datos => {
 
-const clientes = datos.slice(1);
+    const clientes = datos.slice(1);
 
-let html = "";
+    let html = "";
 
-clientes.forEach(cliente=>{
+    clientes.forEach(cliente => {
 
-html += `
-<div style="border:1px solid #ddd;padding:15px;border-radius:15px;margin-bottom:15px;">
+        const porcentaje = cliente[3] * 10;
 
-<h3>${cliente[1]}</h3>
+        html += `
+        <div class="cliente-card">
 
-<p>Compras: ${cliente[3]}</p>
+            <h2>${cliente[1]}</h2>
 
-</div>
-`;
+            <p><strong>Compras:</strong> ${cliente[3]}/10</p>
 
-});
+            <div class="progress">
+                <div class="bar" style="width:${porcentaje}%"></div>
+            </div>
 
-document.getElementById("clientes").innerHTML = html;
+            <div class="botones">
+                <button disabled>➖</button>
+
+                <span>${cliente[3]}</span>
+
+                <button disabled>➕</button>
+            </div>
+
+        </div>
+        `;
+    });
+
+    document.getElementById("clientes").innerHTML = html;
 
 });
