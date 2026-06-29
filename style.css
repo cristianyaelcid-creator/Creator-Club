@@ -175,3 +175,29 @@ color:#666;
 .diamante .progress-text{
 color:white;
 }
+.wallet{
+    margin-top:20px;
+    padding:18px;
+    background:linear-gradient(135deg,#1f1f1f,#2d2d2d);
+    border-radius:18px;
+    color:white;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    text-align:left;
+}
+
+.wallet-title{
+    font-size:15px;
+    color:#FFD54F;
+    font-weight:bold;
+}
+
+.wallet-money{
+    font-size:30px;
+    font-weight:800;
+    margin:8px 0;
+}
+
+.wallet-text{
+    font-size:13px;
+    color:#d8d8d8;
+}
