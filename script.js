@@ -19,6 +19,9 @@ const cliente = clientes.find(fila => Number(fila[0]) === id);
 document.getElementById("memberId").textContent =
 "Miembro #" + String(cliente[0]).padStart(4,"0");
     
+    document.getElementById("fecha").textContent =
+"📅 Miembro desde: " + cliente[5];
+    
     document.getElementById("puntos").textContent =
       cliente[2] + " punto(s)";
 
