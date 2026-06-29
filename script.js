@@ -27,7 +27,10 @@ document.getElementById("memberId").textContent =
 
     document.getElementById("compras").textContent =
       cliente[3] + " de 10 compras";
-
+    
+document.getElementById("saldo").textContent =
+"$" + cliente[6] + " MXN";
+    
     const faltan = 10 - cliente[3];
 let nivel = "🥉 Bronce";
 
