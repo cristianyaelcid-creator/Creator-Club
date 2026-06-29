@@ -31,6 +31,9 @@ document.getElementById("memberId").textContent =
 document.getElementById("saldo").textContent =
 "$" + cliente[6] + " MXN";
     
+    document.getElementById("objetivo").textContent =
+cliente[3] + " / 5";
+    
     const faltan = 10 - cliente[3];
 let nivel = "🥉 Bronce";
 
