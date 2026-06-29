@@ -32,7 +32,9 @@ margin-bottom:10px;
 
 h1{
 margin-top:10px;
+font-size:30px;
 color:#ff9800;
+font-weight:800;
 }
 
 .name{
@@ -59,9 +61,10 @@ margin-top:20px;
 .bar{
 height:100%;
 width:0%;
-background:linear-gradient(90deg,#ff9800,#ffc107);
+background:linear-gradient(90deg,#ff9800,#ffd54f);
 border-radius:30px;
-transition:width .6s ease;
+transition:width .8s ease;
+box-shadow:0 0 12px rgba(255,152,0,.5);
 }
 
 .reward{
@@ -120,4 +123,26 @@ color:white;
 .diamante .points,
 .diamante .footer{
 color:white;
+}
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.club{
+font-size:18px;
+font-weight:bold;
+color:#ff9800;
+}
+
+.status{
+background:#4caf50;
+color:white;
+padding:5px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+letter-spacing:.5px;
 }
