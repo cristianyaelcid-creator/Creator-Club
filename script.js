@@ -77,7 +77,10 @@ if (cliente[3] >= 10) {
     
     document.getElementById("barra").style.width =
       (cliente[3] * 10) + "%";
-
+    
+document.getElementById("progresoTexto").textContent =
+Math.round((cliente[3] / 10) * 100) + "% completado";
+    
   })
   .catch(error => {
     console.error(error);
