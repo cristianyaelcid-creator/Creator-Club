@@ -224,3 +224,20 @@ color:white;
     </div>
 
 </div>
+
+.goal-bar{
+width:100%;
+height:12px;
+background:#e5e5e5;
+border-radius:20px;
+overflow:hidden;
+margin:10px 0;
+}
+
+.goal-fill{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#ff9800,#ffd54f);
+border-radius:20px;
+transition:.5s;
+}
