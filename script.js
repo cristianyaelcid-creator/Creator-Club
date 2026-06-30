@@ -34,6 +34,9 @@ document.getElementById("saldo").textContent =
     document.getElementById("objetivo").textContent =
 cliente[3] + " / 5";
     
+    document.getElementById("goalFill").style.width =
+(cliente[3] / 5 * 100) + "%";
+    
     const faltan = 10 - cliente[3];
 let nivel = "🥉 Bronce";
 
