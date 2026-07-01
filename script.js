@@ -11,9 +11,9 @@ const id = parseInt(parametros.get("id")) || 1;
 
 // Quitamos la primera fila (encabezados)
 const clientes = datos.clientes.slice(1);
-    
-const misiones = datos.misiones.slice(1);
 
+const misiones = datos.misiones.slice(1);
+    
 // Buscar la misión que esté activa
 const misionActiva = misiones.find(m => m[1] === "Si");
     
