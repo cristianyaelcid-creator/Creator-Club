@@ -69,8 +69,8 @@ document.getElementById("nivel").textContent =
 
 tarjeta.classList.remove("bronce","plata","oro","diamante");
 
-if (cliente[9] >= cliente[10]) {
-  
+if(cliente[3] >= 10){
+
     tarjeta.classList.add("diamante");
 
 }else if(cliente[3] >= 8){
@@ -85,9 +85,9 @@ if (cliente[9] >= cliente[10]) {
 
     tarjeta.classList.add("bronce");
 
-}  
+}
     
-if (cliente[3] >= meta) {
+if (cliente[9] >= cliente[10]) {
 
     document.getElementById("recompensa").innerHTML =
     "🎉 <b>¡Recompensa desbloqueada!</b><br>Ya puedes reclamar tu beneficio.";
@@ -95,15 +95,14 @@ if (cliente[3] >= meta) {
 } else {
 
     document.getElementById("recompensa").textContent =
-    "🎁 Te faltan " + faltan + " compras";
+    "🎁 Te falta completar la misión";
 
 }
-    
     document.getElementById("barra").style.width =
-(cliente[9] / cliente[10] * 100) + "%";
-    
+(cliente[3] / 10 * 100) + "%";
+
 document.getElementById("progresoTexto").textContent =
-Math.round((cliente[9] / cliente[10]) * 100) + "% completado";
+Math.round((cliente[3] / 10) * 100) + "% completado";
     
   })
   .catch(error => {
