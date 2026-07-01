@@ -11,7 +11,12 @@ const id = parseInt(parametros.get("id")) || 1;
 
 // Quitamos la primera fila (encabezados)
 const clientes = datos.slice(1);
+    
+const misiones = datos.misiones.slice(1);
 
+// Buscar la misión que esté activa
+const misionActiva = misiones.find(m => m[1] === "Si");
+    
 // Buscamos el cliente por ID
 const cliente = clientes.find(fila => Number(fila[0]) === id);
 
@@ -31,11 +36,11 @@ document.getElementById("memberId").textContent =
 document.getElementById("saldo").textContent =
 "$" + cliente[6] + " MXN";
     
-    document.getElementById("objetivo").textContent =
-cliente[3] + " / 5";
+  document.getElementById("objetivo").textContent =
+cliente[3] + " / " + misionActiva[2];
     
     document.getElementById("goalFill").style.width =
-(cliente[3] / 5 * 100) + "%";
+(cliente[3] / misionActiva[2] * 100) + "%";
     
     const faltan = 10 - cliente[3];
 let nivel = "🥉 Bronce";
@@ -85,10 +90,10 @@ if (cliente[3] >= 10) {
 }
     
     document.getElementById("barra").style.width =
-      (cliente[3] * 10) + "%";
+(cliente[3] / misionActiva[2] * 100) + "%";
     
 document.getElementById("progresoTexto").textContent =
-Math.round((cliente[3] / 10) * 100) + "% completado";
+Math.round((cliente[3] / misionActiva[2]) * 100) + "% completado";
     
   })
   .catch(error => {
