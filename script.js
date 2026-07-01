@@ -43,16 +43,16 @@ document.getElementById("memberId").textContent =
 document.getElementById("saldo").textContent =
 "$" + cliente[6] + " MXN";
     
-  document.getElementById("objetivo").textContent =
-cliente[3] + " / " + misionActiva[2];
+ document.getElementById("objetivo").textContent =
+cliente[9] + " / " + cliente[10];
     
-    document.getElementById("goalFill").style.width =
-(cliente[3] / misionActiva[2] * 100) + "%";
+  document.getElementById("goalFill").style.width =
+(cliente[9] / cliente[10] * 100) + "%";
     
     document.getElementById("goalReward").textContent =
 "🎁 Recompensa: +$" + recompensa + " de Saldo Aura";
     
-    const faltan = misionActiva[2] - cliente[3];
+    const faltan = cliente[10] - cliente[9];
 let nivel = "🥉 Bronce";
 
 if(cliente[3] >= 10){
@@ -69,8 +69,8 @@ document.getElementById("nivel").textContent =
 
 tarjeta.classList.remove("bronce","plata","oro","diamante");
 
-if(cliente[3] >= meta){
-
+if (cliente[9] >= cliente[10]) {
+  
     tarjeta.classList.add("diamante");
 
 }else if(cliente[3] >= 8){
@@ -100,10 +100,10 @@ if (cliente[3] >= meta) {
 }
     
     document.getElementById("barra").style.width =
-(cliente[3] / misionActiva[2] * 100) + "%";
+(cliente[9] / cliente[10] * 100) + "%";
     
 document.getElementById("progresoTexto").textContent =
-Math.round((cliente[3] / misionActiva[2]) * 100) + "% completado";
+Math.round((cliente[9] / cliente[10]) * 100) + "% completado";
     
   })
   .catch(error => {
