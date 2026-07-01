@@ -13,11 +13,15 @@ const id = parseInt(parametros.get("id")) || 1;
 const clientes = datos.clientes.slice(1);
 
 const misiones = datos.misiones.slice(1);
-    
+
 // Buscar la misión que esté activa
-const misionActiva = misiones.find(m => m[1] === "Si");
-    
-    const meta = Number(misionActiva[2]);
+const misionActiva = misiones.find(
+  m => String(m[1]).trim().toLowerCase() === "sí"
+);
+
+console.log(misionActiva);
+
+const meta = Number(misionActiva[2]);
 const recompensa = Number(misionActiva[3]);
     
 // Buscamos el cliente por ID
