@@ -10,12 +10,15 @@ fetch(API_URL)
 const id = parseInt(parametros.get("id")) || 1;
 
 // Quitamos la primera fila (encabezados)
-const clientes = datos.slice(1);
+const clientes = datos.clientes.slice(1);
     
 const misiones = datos.misiones.slice(1);
 
 // Buscar la misión que esté activa
 const misionActiva = misiones.find(m => m[1] === "Si");
+    
+    const meta = Number(misionActiva[2]);
+const recompensa = Number(misionActiva[3]);
     
 // Buscamos el cliente por ID
 const cliente = clientes.find(fila => Number(fila[0]) === id);
@@ -42,7 +45,10 @@ cliente[3] + " / " + misionActiva[2];
     document.getElementById("goalFill").style.width =
 (cliente[3] / misionActiva[2] * 100) + "%";
     
-    const faltan = 10 - cliente[3];
+    document.getElementById("goalReward").textContent =
+"🎁 Recompensa: +$" + recompensa + " de Saldo Aura";
+    
+    const faltan = misionActiva[2] - cliente[3];
 let nivel = "🥉 Bronce";
 
 if(cliente[3] >= 10){
@@ -59,7 +65,7 @@ document.getElementById("nivel").textContent =
 
 tarjeta.classList.remove("bronce","plata","oro","diamante");
 
-if(cliente[3] >= 10){
+if(cliente[3] >= meta){
 
     tarjeta.classList.add("diamante");
 
@@ -77,7 +83,7 @@ if(cliente[3] >= 10){
 
 }  
     
-if (cliente[3] >= 10) {
+if (cliente[3] >= meta) {
 
     document.getElementById("recompensa").innerHTML =
     "🎉 <b>¡Recompensa desbloqueada!</b><br>Ya puedes reclamar tu beneficio.";
